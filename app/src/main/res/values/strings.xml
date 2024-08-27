@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Fan Ticket</string>
+    <string name="welcome">Welcome</string>
+    <string name="title_welcome">Let’s Watch and Support Your Favorite Team</string>
+    <string name="get_started">Get Started</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="login">Login</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="log_sub_title">Glad to see you again. Login to your account below</string>
+    <string name="log_in_with_google">Log In With Google</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Don\'t have an account? Sign up for free!</string>
+    <string name="sub_title_reg">Enter your details below to create your account and get started</string>
+    <string name="reg">Sign Up!</string>
+    <string name="username">Username</string>
+    <string name="nationality">Nationality</string>
+    <string name="phone_code">+1</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="register">Register</string>
+    <string name="Already_reg">Already have an account? Login</string>
+
+    //Firebase
+    <string name="your_web_client_id" translatable="false">403702314873-crvgm1v4rojdpdgknihi5aibrb9chq76.apps.googleusercontent.com</string>
+    <string name="my_account">My Account</string>
+    <string name="username_acc">Willy Pieter Julius Situmorang</string>
+    <string name="logout">Logout</string>
+</resources>

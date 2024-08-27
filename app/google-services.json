@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "403702314873",
+    "project_id": "fan-ticket-b4137",
+    "storage_bucket": "fan-ticket-b4137.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403702314873:android:589f2156a13ae524f3e1a8",
+        "android_client_info": {
+          "package_name": "com.example.fanticket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403702314873-u5iahbbiq83lgu52qckmm8dc381vv926.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fanticket",
+            "certificate_hash": "1e1a1550919349330e7978e79c5e0676032f4940"
+          }
+        },
+        {
+          "client_id": "403702314873-crvgm1v4rojdpdgknihi5aibrb9chq76.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3ONg6lhAmqAAw7IE2OCLOqpVq_e_m4WY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403702314873-crvgm1v4rojdpdgknihi5aibrb9chq76.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
