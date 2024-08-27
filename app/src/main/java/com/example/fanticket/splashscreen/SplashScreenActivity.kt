@@ -24,7 +24,7 @@ class SplashScreenActivity : AppCompatActivity() {
                 } catch (e: InterruptedException) {
                     e.printStackTrace()
                 } finally {
-                    startActivity(Intent(this@SplashScreenActivity, LoginActivity::class.java))
+                    startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
                     finish()
                 }
             }

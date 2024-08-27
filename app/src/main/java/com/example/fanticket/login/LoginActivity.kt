@@ -5,6 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
+import android.widget.Toast
 import androidx.credentials.CredentialManager
 import androidx.credentials.CustomCredential
 import androidx.credentials.GetCredentialRequest
@@ -39,6 +41,45 @@ class LoginActivity : AppCompatActivity() {
         binding.signInButton.setOnClickListener {
             signIn()
         }
+
+        binding.buttonLogin.setOnClickListener {
+            val email = binding.edtEmailLog.text.toString()
+            val password = binding.edtPasswordLog.text.toString()
+
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                loginUser(email, password)
+            } else {
+                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun validateInput(email: String, password: String): Boolean {
+        if (email.isEmpty()) {
+            binding.edtEmailLog.error = "Email is required"
+            binding.edtEmailLog.requestFocus()
+            return false
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            binding.edtEmailLog.error = "Please enter a valid email"
+            binding.edtEmailLog.requestFocus()
+            return false
+        }
+
+        if (password.isEmpty()) {
+            binding.edtPasswordLog.error = "Password is required"
+            binding.edtPasswordLog.requestFocus()
+            return false
+        }
+
+        if (password.length < 6) {
+            binding.edtPasswordLog.error = "Password must be at least 6 characters"
+            binding.edtPasswordLog.requestFocus()
+            return false
+        }
+
+        return true
     }
     private fun signIn() {
         val credentialManager = CredentialManager.create(this) //import from androidx.CredentialManager
@@ -104,6 +145,26 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this@LoginActivity, ProfileActivity::class.java))
             finish()
         }
+    }
+
+    private fun loginUser(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Login sukses
+                    val user = auth.currentUser
+                    user?.let {
+                        // Akses data pengguna, misalnya uid
+                        val uid = it.uid
+                        Toast.makeText(this, "Login successful. User ID: $uid", Toast.LENGTH_SHORT).show()
+                        // Pindah ke activity lain jika perlu
+                        Intent(this, ProfileActivity::class.java).also { startActivity(it) }
+                    }
+                } else {
+                    // Login gagal
+                    Toast.makeText(this, "Login failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     override fun onStart() {
